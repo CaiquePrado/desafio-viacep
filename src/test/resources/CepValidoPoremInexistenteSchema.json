@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "erro": {
+      "type": "boolean"
+    }
+  },
+  "required": ["erro"]
+}

@@ -1,6 +1,7 @@
 package dbserver.desafioviacep.desafioviacep;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
@@ -29,6 +30,7 @@ class ViaCepTest extends BaseTest {
         .get("/{cep}/json/", "01001-000")
         .then()
         .statusCode(HttpStatus.SC_OK)
+        .body(matchesJsonSchemaInClasspath("EnderecoEsperadoSchema.json"))
         .body("cep", equalTo(enderecoEsperado.getCep()))
         .body("logradouro", equalTo(enderecoEsperado.getLogradouro()))
         .body("complemento", equalTo(enderecoEsperado.getComplemento()))
@@ -67,6 +69,7 @@ class ViaCepTest extends BaseTest {
         .get("/{cep}/json/", "99999-999")
         .then()
         .statusCode(HttpStatus.SC_OK)
+        .body(matchesJsonSchemaInClasspath("CepValidoPoremInexistenteSchema.json"))
         .body("erro", equalTo(true));
   }
 
@@ -96,6 +99,7 @@ class ViaCepTest extends BaseTest {
         .get("/{uf}/{cidade}/{logradouro}/json/")
         .then()
         .statusCode(HttpStatus.SC_OK)
+        .body(matchesJsonSchemaInClasspath("CepsSchema.json"))
         .body("$", hasSize(5))
         .body("cep", hasItems(enderecoEsperado.getCep()))
         .body("logradouro", hasItems(enderecoEsperado.getLogradouro()))
@@ -247,6 +251,7 @@ class ViaCepTest extends BaseTest {
         .get("/{uf}/{cidade}/{logradouro}/json/")
         .then()
         .statusCode(HttpStatus.SC_OK)
+        .body(matchesJsonSchemaInClasspath("ArrayVazioSchema.json"))
         .body(equalTo("[]"))
         .body("$", hasSize(0));
   }
@@ -262,6 +267,7 @@ class ViaCepTest extends BaseTest {
         .get("/{uf}/{cidade}/{logradouro}/json/")
         .then()
         .statusCode(HttpStatus.SC_OK)
+        .body(matchesJsonSchemaInClasspath("ArrayVazioSchema.json"))
         .body(equalTo("[]"))
         .body("$", hasSize(0));
   }
