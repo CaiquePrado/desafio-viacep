@@ -18,4 +18,20 @@ public interface EnderecoStubs {
         .siafi("7107")
         .build();
   }
+
+  public static Endereco cidadeExistenteInvalidaStub() {
+    return Endereco.builder()
+        .logradouro("Domingos")
+        .localidade("São Gonçalo")
+        .uf("RS")
+        .build();
+  }
+
+  public static Endereco logradouroExistenteInvalidaStub() {
+    return Endereco.builder()
+        .logradouro("Frei Benjamin")
+        .localidade("Porto Alegre")
+        .uf("RS")
+        .build();
+  }
 }
