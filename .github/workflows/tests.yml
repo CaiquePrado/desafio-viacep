@@ -1,4 +1,4 @@
-name: Gradle and REST Assured Tests
+name: REST Assured Tests
 
 on:
   push:
