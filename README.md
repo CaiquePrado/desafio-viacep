@@ -6,7 +6,7 @@ Este é um projeto que utiliza Rest-Assured e JUnit5 para testar a API ViaCEP. E
 
 Aqui estão alguns links para a documentação de teste do projeto:
 
-- Cenários de Teste: https://docs.google.com/document/d/11VgINOqLO4rik4GuqhxZsZNzCsIznSh1ameNHm6gsr0/edit?usp=sharing
+- Cenários de Teste: https://docs.google.com/document/d/15nMZZvUnj5t1zbOlHINSHMvs-IfOLP3CSM3PzA0SQok/edit?usp=sharing
 - Planejamento de Testes: https://docs.google.com/document/d/1XqmYyhbd-2yo6LLHg0ee7cuohOkkAlUZxofXNYtylJM/edit?usp=sharing
 - Tabelas de Decisão: https://docs.google.com/spreadsheets/d/1fwqJ1LNm20Fgfo6l-bGZI7a89619hAiULIhKR3hL8Gk/edit?usp=sharing
 
